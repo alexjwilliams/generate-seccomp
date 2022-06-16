@@ -1,0 +1,10 @@
+## Copyright (c) 2022 Alexander Williams <alexwilliams@protonmail.ch>
+## SPDX-License-Identifier: LicenseRef-MIT-Alex
+
+#!/usr/bin/bash
+
+wget -nc 'https://raw.githubusercontent.com/moby/moby/master/profiles/seccomp/default.json'
+
+sed "s/\"writev\"/\"writev\",\"clone\",\"ptrace\",\"personality\"/" default.json > modified.json
+
+echo 'modified.json generated.'
