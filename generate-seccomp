@@ -5,6 +5,6 @@
 
 wget -nc 'https://raw.githubusercontent.com/moby/moby/master/profiles/seccomp/default.json'
 
-sed "s/\"writev\"/\"writev\",\"clone\",\"ptrace\",\"personality\"/" default.json > modified.json
+sed "s/\"writev\"/\"writev\",\"clone\",\"ptrace\",\"personality\",\"perf_event_open\"/" default.json > modified.json
 
 echo 'modified.json generated.'
